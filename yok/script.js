@@ -37,7 +37,6 @@ const videoStrip = document.getElementById("videoStrip");
 const scrollProgress = document.getElementById("scrollProgress");
 const sparkleLayer = document.getElementById("sparkleLayer");
 const floatingHearts = document.getElementById("floatingHearts");
-const themePulse = document.getElementById("themePulse");
 const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightboxImage");
 const closeLightbox = document.getElementById("closeLightbox");
@@ -109,24 +108,96 @@ function createVideoCards() {
   });
 }
 
+// ================= COUNTER =================
+function animateCounters() {
+  const today = new Date();
+  const diffDays = Math.floor((today - anniversaryStart) / 86400000);
+
+  document.getElementById("yearsTogether").textContent = 2;
+  document.getElementById("daysTogether").textContent = diffDays;
+  document.getElementById("hoursTogether").textContent = diffDays * 24;
+}
+
+// ================= REVEAL =================
+function setupRevealObserver() {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+}
+
+// ================= SCROLL =================
+function updateScrollProgress() {
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  const percent = (window.scrollY / max) * 100;
+  scrollProgress.style.width = percent + "%";
+}
+
+// ================= EFFECT =================
+function popSparkle(x, y) {
+  const s = document.createElement("span");
+  s.className = "sparkle";
+  s.style.left = x + "px";
+  s.style.top = y + "px";
+  sparkleLayer.appendChild(s);
+  setTimeout(() => s.remove(), 1000);
+}
+
+function popHeart(x, y) {
+  const h = document.createElement("span");
+  h.className = "heart-pop";
+  h.textContent = "♡";
+  h.style.left = x + "px";
+  h.style.top = y + "px";
+  floatingHearts.appendChild(h);
+  setTimeout(() => h.remove(), 1000);
+}
+
 // ================= HEART EXPLOSION =================
 function burstHearts() {
-  const width = window.innerWidth;
-  const height = window.innerHeight;
+  const w = window.innerWidth;
+  const h = window.innerHeight;
 
   for (let i = 0; i < 40; i++) {
     setTimeout(() => {
       const heart = document.createElement("span");
       heart.className = "heart";
       heart.textContent = "♡";
-
-      heart.style.left = Math.random() * width + "px";
-      heart.style.top = Math.random() * height + "px";
-
+      heart.style.left = Math.random() * w + "px";
+      heart.style.top = Math.random() * h + "px";
       heartExplosion.appendChild(heart);
       setTimeout(() => heart.remove(), 1600);
     }, i * 20);
   }
+}
+
+// ================= INTERACTION =================
+function setupInteractions() {
+  window.addEventListener("scroll", updateScrollProgress);
+
+  window.addEventListener("pointermove", e => {
+    if (Math.random() > 0.95) popSparkle(e.clientX, e.clientY);
+  });
+
+  window.addEventListener("click", e => {
+    popHeart(e.clientX, e.clientY);
+  });
+
+  closeLightbox.onclick = () => lightbox.close();
+
+  letterChips.forEach((chip, i) => {
+    chip.onclick = () => {
+      letterChips.forEach(c => c.classList.remove("is-active"));
+      letterParagraphs.forEach(p => p.classList.remove("is-visible"));
+      chip.classList.add("is-active");
+      letterParagraphs[i].classList.add("is-visible");
+    };
+  });
 }
 
 // ================= LOCK =================
@@ -167,11 +238,6 @@ function unlock() {
   successSound.play();
   lockScreen.classList.add("hide");
   burstHearts();
-
-  document.body.animate(
-    [{ transform: "scale(0.98)" }, { transform: "scale(1)" }],
-    { duration: 600 }
-  );
 }
 
 function shake() {
@@ -190,3 +256,7 @@ function shake() {
 createBackgroundSlides();
 createMemoryCards();
 createVideoCards();
+animateCounters();
+setupRevealObserver();
+setupInteractions();
+updateScrollProgress();
