@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>For Yok, With Love</title>
+  <meta name="description" content="Anniversary surprise page for Yok in pastel blue with photos, videos, and Cinnamoroll.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Itim&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <div class="background-carousel" aria-hidden="true">
+      <div class="bg-track" id="bgTrack"></div>
+      <div class="bg-overlay"></div>
+      <div class="bg-glow bg-glow-a"></div>
+      <div class="bg-glow bg-glow-b"></div>
+    </div>
+
+    <div class="sparkle-layer" id="sparkleLayer" aria-hidden="true"></div>
+    <div class="floating-hearts" id="floatingHearts" aria-hidden="true"></div>
+
+    <header class="top-bar">
+      <div class="brand-pill">YOK &amp; ME • 2 YEARS</div>
+      <button class="ghost-button" id="themePulse" type="button">แตะให้หัวใจฟุ้ง</button>
+    </header>
+
+    <main class="story">
+      <section class="panel hero-panel" id="top">
+        <img class="mascot mascot-cupcake" src="New folder/1eaeb8018091a8db70e7466f69bd0544.png" alt="" aria-hidden="true">
+        <img class="mascot mascot-balloon" src="New folder/107a14b7be5eb1a931d56784bdc4a4e2.png" alt="" aria-hidden="true">
+        <img class="mascot mascot-hat" src="New folder/91f7659a0107a4577289c439728ffcb0.png" alt="" aria-hidden="true">
+
+        <div class="hero-copy reveal visible">
+          <p class="eyebrow">Happy Anniversary • 21 เมษายน 2567 → 21 เมษายน 2569</p>
+          <h1>ถึงหยก<br>ครบรอบ 2 ปีของเราแล้วนะ</h1>
+          <p class="lead">
+            เค้ารักเธอมากๆนะคะ ขอบคุณเธอมากๆนะคะ
+            หน้านี้ตั้งใจทำให้เป็นของขวัญเล็ก ๆ ที่มีทั้งรูป วิดีโอ และทุกความคิดถึงที่อยากให้เธอเลื่อนอ่านไปเรื่อย ๆ
+          </p>
+
+          <div class="hero-actions">
+            <a class="primary-button" href="#memories">เริ่มดูความทรงจำ</a>
+            <a class="secondary-button" href="#letter">อ่านข้อความถึงเธอ</a>
+          </div>
+        </div>
+
+        <div class="hero-stack">
+          <article class="glass-card intro-card reveal">
+            <p class="card-label">Our Day Counter</p>
+            <div class="count-grid">
+              <div><strong id="yearsTogether">2</strong><span>ปี</span></div>
+              <div><strong id="daysTogether">0</strong><span>วัน</span></div>
+              <div><strong id="hoursTogether">0</strong><span>ชั่วโมง</span></div>
+            </div>
+            <p class="soft-copy">เริ่มนับจากวันที่ 21 เมษายน 2024 และวันนี้ก็ยังเลือกเธอเหมือนเดิม</p>
+          </article>
+
+          <article class="glass-card promise-card reveal">
+            <p class="card-label">Tiny Promise</p>
+            <h2>ไม่ว่าหน้าถัดไปจะเป็นยังไง เค้าก็ยังอยากมีเธออยู่ในนั้น</h2>
+            <div class="promise-tags">
+              <span>safe place</span>
+              <span>my favorite person</span>
+              <span>cute every day</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel story-panel">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Why This Page Exists</p>
+          <h2>เพราะบางความรู้สึกมันอยากบอกด้วยหน้าเว็บทั้งหน้า</h2>
+        </div>
+
+        <div class="note-board">
+          <article class="note-card glass-card reveal">
+            <span class="note-icon">☁</span>
+            <h3>สีฟ้าแบบที่เธอชอบ</h3>
+            <p>เค้าทำโทนนี้ให้ทั้งหน้า เพราะอยากให้ความรู้สึกมันนุ่ม ฟุ้ง และน่ารักเหมือน Cinnamoroll ที่ใส่ไว้ให้เธอ</p>
+          </article>
+          <article class="note-card glass-card reveal">
+            <span class="note-icon">♡</span>
+            <h3>เลื่อนลงไปก็เจอเรา</h3>
+            <p>รูปด้านหลังจะค่อย ๆ เปลี่ยนระหว่างเลื่อน เหมือนความทรงจำของเราที่วนกลับมาให้ยิ้มได้ทุกครั้ง</p>
+          </article>
+          <article class="note-card glass-card reveal">
+            <span class="note-icon">✦</span>
+            <h3>มีลูกเล่นไว้ให้แอบยิ้ม</h3>
+            <p>แตะการ์ด เล่นคลิป เปิดรูปดูใกล้ ๆ และกดอ่านข้อความทีละส่วนได้ เพื่อให้เว็บนี้รู้สึกเป็นของขวัญจริง ๆ</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel memories-panel" id="memories">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Memory Lane</p>
+          <h2>ทุกภาพมีเหตุผลที่อยากเก็บไว้</h2>
+        </div>
+
+        <div class="memory-stack" id="memoryStack"></div>
+      </section>
+
+      <section class="panel timeline-panel">
+        <div class="section-heading reveal">
+          <p class="eyebrow">2 Years With You</p>
+          <h2>เรื่องธรรมดาที่พอมีเธอแล้วพิเศษขึ้นหมดเลย</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <span class="timeline-dot"></span>
+            <div class="glass-card">
+              <h3>จากวันที่เริ่มรู้จักกัน</h3>
+              <p>จากคนคนหนึ่ง กลายเป็นคนที่อยากเล่าเรื่องทุกอย่างให้ฟังเป็นคนแรกของวัน</p>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="timeline-dot"></span>
+            <div class="glass-card">
+              <h3>จากวันธรรมดาเป็นวันโปรด</h3>
+              <p>แค่ได้กินข้าว เดินเล่น หรืออยู่เงียบ ๆ ข้างกัน มันก็กลายเป็นช่วงเวลาที่อยากจำไปนาน ๆ</p>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="timeline-dot"></span>
+            <div class="glass-card">
+              <h3>จากปีที่ 1 มาปีที่ 2</h3>
+              <p>ขอบคุณที่ยังจับมือกันมาเรื่อย ๆ และยังทำให้เค้าอยากตั้งใจรักเธอให้เก่งขึ้นทุกวัน</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel video-panel">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Highlight Videos</p>
+          <h2>คลิปที่กดเล่นเมื่อไหร่ก็เหมือนย้อนกลับไปวันนั้น</h2>
+        </div>
+
+        <div class="video-strip" id="videoStrip"></div>
+      </section>
+
+      <section class="panel wishes-panel">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Tap To Flip</p>
+          <h2>4 อย่างที่เค้าอยากบอกเธอทุกวัน</h2>
+        </div>
+
+        <div class="flip-grid">
+          <button class="flip-card reveal" type="button">
+            <span class="flip-card-inner">
+              <span class="flip-card-front">1</span>
+              <span class="flip-card-back">ขอบคุณที่ทำให้ทุกวันของเค้าอ่อนโยนขึ้น</span>
+            </span>
+          </button>
+          <button class="flip-card reveal" type="button">
+            <span class="flip-card-inner">
+              <span class="flip-card-front">2</span>
+              <span class="flip-card-back">ขอบคุณที่อยู่ข้างกันทั้งวันที่หัวเราะและวันที่เหนื่อย</span>
+            </span>
+          </button>
+          <button class="flip-card reveal" type="button">
+            <span class="flip-card-inner">
+              <span class="flip-card-front">3</span>
+              <span class="flip-card-back">ขอบคุณที่เป็นความน่ารักประจำวันของเค้าเสมอ</span>
+            </span>
+          </button>
+          <button class="flip-card reveal" type="button">
+            <span class="flip-card-inner">
+              <span class="flip-card-front">4</span>
+              <span class="flip-card-back">แล้วก็ยังรักเธอมาก ๆ เหมือนเดิม และมากขึ้นกว่าเดิมด้วย</span>
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <section class="panel letter-panel" id="letter">
+        <div class="letter-wrap glass-card reveal">
+          <p class="eyebrow">For Yok</p>
+          <h2>ข้อความที่อยากให้เธอได้อ่านจนจบ</h2>
+          <div class="letter-lines" id="letterLines">
+            <button class="letter-chip is-active" type="button">เปิดบรรทัดที่ 1</button>
+            <button class="letter-chip" type="button">เปิดบรรทัดที่ 2</button>
+            <button class="letter-chip" type="button">เปิดบรรทัดที่ 3</button>
+            <button class="letter-chip" type="button">เปิดบรรทัดที่ 4</button>
+          </div>
+          <div class="letter-content" id="letterContent">
+            <p class="letter-paragraph is-visible">ถึงหยก สุขสันต์วันครบรอบ 2 ปีนะคะ ตั้งแต่วันที่ 21 เมษายน 2024 จนถึงวันนี้ เค้ายังรู้สึกดีใจมากที่ได้มีเธออยู่ในชีวิต</p>
+            <p class="letter-paragraph">เค้ารักเธอมากๆนะคะ ขอบคุณเธอมากๆนะคะ ขอบคุณที่คอยดูแล คอยรับฟัง และเป็นรอยยิ้มดี ๆ ของเค้าในทุกช่วงเวลา</p>
+            <p class="letter-paragraph">ต่อให้วันไหนจะเหนื่อยหรือวุ่นวายแค่ไหน แค่มีเธออยู่ตรงนี้ มันก็ทำให้เค้ารู้สึกว่าโลกใจดีกับเค้ามากขึ้นเสมอ</p>
+            <p class="letter-paragraph">ขอให้ปีที่ 3 ของเราเต็มไปด้วยรูปใหม่ ๆ คลิปใหม่ ๆ เสียงหัวเราะใหม่ ๆ และความรักที่เติบโตไปพร้อมกันนะคะ</p>
+          </div>
+          <p class="signature">รักหยกที่สุดเลย ♡</p>
+        </div>
+      </section>
+    </main>
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <span id="scrollProgress"></span>
+    </div>
+
+    <dialog class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="closeLightbox" type="button" aria-label="Close">×</button>
+      <img id="lightboxImage" alt="memory preview">
+    </dialog>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
