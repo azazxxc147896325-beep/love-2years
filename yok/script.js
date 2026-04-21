@@ -22,8 +22,8 @@ const memoryImages = [
 
 const highlightVideos = [
   { src: "New folder/4228aa4ff0b5441ba1f52c7011a89a93.MP4", title: "คลิปที่ดูแล้วใจละลาย", text: "กดเล่นแล้วเหมือนได้กลับไปอยู่ตรงนั้นอีกครั้ง" },
-  { src: "New folder/video_563608544898187591-pFY2unAj.MP4", title: "ความน่ารักที่อยากเปิดซ้ำ", text: "เป็นช่วงเวลาที่อยากเก็บไว้ใกล้ตัวเสมอ" },
-  { src: "New folder/video_563608545183662524-wvTOCQJ0.MP4", title: "วันนั้นที่ยังชัดอยู่เลย", text: "บางคลิปไม่ต้องมีคำบรรยายก็อบอุ่นพอแล้ว" },
+  { src: "New folder/v14044g50000d43kh4nog65n7q1v8kbg", title: "ความน่ารักที่อยากเปิดซ้ำ", text: "เป็นช่วงเวลาที่อยากเก็บไว้ใกล้ตัวเสมอ" },
+  { src: "New folder/video_563608558655766995-hYro8ara.MP4", title: "วันนั้นที่ยังชัดอยู่เลย", text: "บางคลิปไม่ต้องมีคำบรรยายก็อบอุ่นพอแล้ว" },
   { src: "New folder/VxgpfWk8WUYGP5b6faF_rXq5xHDkPyX-UOVJWOsW5yI.MP4", title: "คลิปโปรดของเรา", text: "อยากกลับมาดูด้วยกันเรื่อย ๆ ทุกปีเลย" }
 ];
 
