@@ -2,36 +2,41 @@
 // FIX: ปลด block การคลิก
 document.querySelectorAll(".bg-overlay, .bg-glow, .background-carousel")
   .forEach(el => el.style.pointerEvents = "none");
+
 const backgroundImages = [
-  "New folder/temp_image_60A0D3C9-5A78-4592-8C3D-53E05E4D6619.WEBP",
-  "New folder/temp_image_3D048E8E-E3A1-4F56-B816-8BCD2BEAD754.WEBP",
-  "New folder/SAM_6110.jpg",
-  "New folder/SAM_6280.JPEG",
-  "New folder/SAM_6282.JPEG",
-  "New folder/SAM_6286.JPEG",
-  "New folder/SAM_6288.JPEG",
-  "New folder/IMG_4548.JPG",
-  "New folder/IMG_4592.JPG",
-  "New folder/IMG_4636.JPG"
+  "assets/temp_image_60A0D3C9-5A78-4592-8C3D-53E05E4D6619.WEBP",
+  "assets/temp_image_3D048E8E-E3A1-4F56-B816-8BCD2BEAD754.WEBP",
+  "assets/SAM_6110.jpg",
+  "assets/SAM_6280.JPEG",
+  "assets/SAM_6282.JPEG",
+  "assets/SAM_6286.JPEG",
+  "assets/SAM_6288.JPEG",
+  "assets/IMG_4548.JPG",
+  "assets/IMG_4592.JPG",
+  "assets/IMG_4636.JPG"
 ];
 
 const memoryImages = [
-  { src: "New folder/IMG_3494.JPG", title: "รูปที่แค่เห็นก็ยิ้มแล้ว", text: "บางภาพพอกลับมาดู ก็ยังรู้สึกเหมือนวันนั้นอยู่ใกล้ ๆ", tag: "favorite" },
-  { src: "New folder/IMG_4636.JPG", title: "โมเมนต์เล็ก ๆ ของเรา", text: "ไม่ได้ต้องมีอะไรยิ่งใหญ่ แค่มีเธออยู่ด้วยก็พิเศษแล้ว", tag: "little things" },
-  { src: "New folder/IMG_4870.JPG", title: "ยังคิดถึงบรรยากาศวันนั้น", text: "รูปนี้ทำให้เค้าจำได้ว่าความสุขของเราเรียบง่ายและน่ารักแค่ไหน", tag: "soft day" },
-  { src: "New folder/IMG_5243.JPG", title: "รูปที่ใจอ่อนทุกครั้ง", text: "พอเห็นเธอในรูปนี้ ก็ยังเผลอยิ้มเหมือนเดิมทุกที", tag: "you" },
-  { src: "New folder/IMG_5287.JPG", title: "ภาพประจำวันที่ดี", text: "ถ้าย้อนกลับไปวันนั้นได้ เค้าก็คงยังอยากเลือกยืนข้างเธอเหมือนเดิม", tag: "us" },
-  { src: "New folder/IMG_6214.JPG", title: "ความทรงจำที่ไม่อยากหายไป", text: "มันเป็นช่วงเวลาธรรมดา แต่กลับมีค่ามากเพราะเป็นเรา", tag: "forever" }
+  { src: "assets/IMG_3494.JPG", title: "รูปที่แค่เห็นก็ยิ้มแล้ว", text: "บางภาพพอกลับมาดู ก็ยังรู้สึกเหมือนวันนั้นอยู่ใกล้ ๆ", tag: "favorite" },
+  { src: "assets/IMG_4636.JPG", title: "โมเมนต์เล็ก ๆ ของเรา", text: "ไม่ได้ต้องมีอะไรยิ่งใหญ่ แค่มีเธออยู่ด้วยก็พิเศษแล้ว", tag: "little things" },
+  { src: "assets/IMG_4870.JPG", title: "ยังคิดถึงบรรยากาศวันนั้น", text: "รูปนี้ทำให้เค้าจำได้ว่าความสุขของเราเรียบง่ายและน่ารักแค่ไหน", tag: "soft day" },
+  { src: "assets/IMG_5243.JPG", title: "รูปที่ใจอ่อนทุกครั้ง", text: "พอเห็นเธอในรูปนี้ ก็ยังเผลอยิ้มเหมือนเดิมทุกที", tag: "you" },
+  { src: "assets/IMG_5287.JPG", title: "ภาพประจำวันที่ดี", text: "ถ้าย้อนกลับไปวันนั้นได้ เค้าก็คงยังอยากเลือกยืนข้างเธอเหมือนเดิม", tag: "us" },
+  { src: "assets/IMG_6214.JPG", title: "ความทรงจำที่ไม่อยากหายไป", text: "มันเป็นช่วงเวลาธรรมดา แต่กลับมีค่ามากเพราะเป็นเรา", tag: "forever" },
+  { src: "assets/IMG_6228.JPG", title: "รอยยิ้มของเธอ", text: "น่ารักที่สุดในโลกเลย", tag: "cute" }, 
+  { src: "assets/IMG_6545.JPG", title: "วันพิเศษของเรา", text: "เก็บไว้เป็นความทรงจำที่ดีที่สุด", tag: "special" }
 ];
 
 const highlightVideos = [
-  { src: "New folder/4228aa4ff0b5441ba1f52c7011a89a93.MP4", title: "คลิปที่ดูแล้วใจละลาย", text: "กดเล่นแล้วเหมือนได้กลับไปอยู่ตรงนั้นอีกครั้ง" },
-  { src: "New folder/v14044g50000d43kh4nog65n7q1v8kbg.MP4", title: "ความน่ารักที่อยากเปิดซ้ำ", text: "เป็นช่วงเวลาที่อยากเก็บไว้ใกล้ตัวเสมอ" },
-  { src: "New folder/video_563608548690100414-i68ucBWi.MP4", title: "วันนั้นที่ยังชัดอยู่เลย", text: "บางคลิปไม่ต้องมีคำบรรยายก็อบอุ่นพอแล้ว" },
-  { src: "New folder/VxgpfWk8WUYGP5b6faF_rXq5xHDkPyX-UOVJWOsW5yI.MP4", title: "คลิปโปรดของเรา", text: "อยากกลับมาดูด้วยกันเรื่อย ๆ ทุกปีเลย" }
+  { src: "assets/4228aa4ff0b5441ba1f52c7011a89a93.MP4", title: "คลิปที่ดูแล้วใจละลาย", text: "กดเล่นแล้วเหมือนได้กลับไปอยู่ตรงนั้นอีกครั้ง" },
+  { src: "assets/v14044g50000d43kh4nog65n7q1v8kbg.MP4", title: "ความน่ารักที่อยากเปิดซ้ำ", text: "เป็นช่วงเวลาที่อยากเก็บไว้ใกล้ตัวเสมอ" },
+  { src: "assets/video_563608548690100414-i68ucBWi.MP4", title: "วันนั้นที่ยังชัดอยู่เลย", text: "บางคลิปไม่ต้องมีคำบรรยายก็อบอุ่นพอแล้ว" },
+  { src: "assets/VxgpfWk8WUYGP5b6faF_rXq5xHDkPyX-UOVJWOsW5yI.MP4", title: "คลิปโปรดของเรา", text: "อยากกลับมาดูด้วยกันเรื่อย ๆ ทุกปีเลย" },
+  { src: "assets/video_563608558655766995-hyRo8ara.MP4", title: "โมเมนต์น่ารักๆ", text: "วนดูได้ไม่มีเบื่อ" }
 ];
 
 const anniversaryStart = new Date("2024-04-21T00:00:00");
+let themePulse = null; // Defined to avoid errors if missing from DOM
 if (themePulse) {
   themePulse.addEventListener("click", () => {
     // effect
@@ -104,8 +109,8 @@ function createVideoCards() {
     card.className = "glass-card video-card reveal";
     card.innerHTML = `
       <video controls playsinline webkit-playsinline>
-  <source src="${src}" type="video/mp4">
-</video>
+        <source src="${src}" type="video/mp4">
+      </video>
       <div class="video-caption">
         <strong>${title}</strong>
         <p>${text}</p>
@@ -237,7 +242,8 @@ document.querySelectorAll(".keypad button").forEach(btn => {
       }
     }
 
-    pinDisplay.textContent = "•".repeat(currentPin.length).padEnd(4, "•");
+    // แก้ไขจาก 4 จุด เป็น 6 จุด เพื่อให้พอดีกับรหัสผ่าน 6 ตัว
+    pinDisplay.textContent = "•".repeat(currentPin.length).padEnd(6, "•");
   };
 });
 
@@ -258,21 +264,15 @@ function shake() {
     { duration: 300 }
   );
 }
+
 document.querySelectorAll(".flip-card").forEach(card => {
   card.addEventListener("click", () => {
     card.classList.toggle("is-flipped");
   });
 });
-letterChips.forEach((chip, index) => {
-  chip.addEventListener("click", () => {
-    letterChips.forEach(c => c.classList.remove("is-active"));
-    letterParagraphs.forEach(p => p.classList.remove("is-visible"));
 
-    chip.classList.add("is-active");
-    letterParagraphs[index].classList.add("is-visible");
-  });
-});
 closeLightbox.onclick = () => lightbox.close();
+
 // ================= INIT =================
 createBackgroundSlides();
 createMemoryCards();

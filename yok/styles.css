@@ -800,8 +800,8 @@ h3 {
 
 .letter-paragraph.is-visible {
   opacity: 1;
-  transform: translateY(0);
 }
+
 /* ===== LOCK SCREEN ===== */
 .lock-screen {
   position: fixed;
