@@ -1,4 +1,7 @@
 // ================= DATA =================
+// FIX: ปลด block การคลิก
+document.querySelectorAll(".bg-overlay, .bg-glow, .background-carousel")
+  .forEach(el => el.style.pointerEvents = "none");
 const backgroundImages = [
   "New folder/temp_image_60A0D3C9-5A78-4592-8C3D-53E05E4D6619.WEBP",
   "New folder/temp_image_3D048E8E-E3A1-4F56-B816-8BCD2BEAD754.WEBP",
@@ -13,8 +16,8 @@ const backgroundImages = [
 ];
 
 const memoryImages = [
-  { src: "New folder/IMG_4459.JPG", title: "รูปที่แค่เห็นก็ยิ้มแล้ว", text: "บางภาพพอกลับมาดู ก็ยังรู้สึกเหมือนวันนั้นอยู่ใกล้ ๆ", tag: "favorite" },
-  { src: "New folder/IMG_4464.JPG", title: "โมเมนต์เล็ก ๆ ของเรา", text: "ไม่ได้ต้องมีอะไรยิ่งใหญ่ แค่มีเธออยู่ด้วยก็พิเศษแล้ว", tag: "little things" },
+  { src: "New folder/IMG_3494.JPG", title: "รูปที่แค่เห็นก็ยิ้มแล้ว", text: "บางภาพพอกลับมาดู ก็ยังรู้สึกเหมือนวันนั้นอยู่ใกล้ ๆ", tag: "favorite" },
+  { src: "New folder/IMG_4636.JPG", title: "โมเมนต์เล็ก ๆ ของเรา", text: "ไม่ได้ต้องมีอะไรยิ่งใหญ่ แค่มีเธออยู่ด้วยก็พิเศษแล้ว", tag: "little things" },
   { src: "New folder/IMG_4870.JPG", title: "ยังคิดถึงบรรยากาศวันนั้น", text: "รูปนี้ทำให้เค้าจำได้ว่าความสุขของเราเรียบง่ายและน่ารักแค่ไหน", tag: "soft day" },
   { src: "New folder/IMG_5243.JPG", title: "รูปที่ใจอ่อนทุกครั้ง", text: "พอเห็นเธอในรูปนี้ ก็ยังเผลอยิ้มเหมือนเดิมทุกที", tag: "you" },
   { src: "New folder/IMG_5287.JPG", title: "ภาพประจำวันที่ดี", text: "ถ้าย้อนกลับไปวันนั้นได้ เค้าก็คงยังอยากเลือกยืนข้างเธอเหมือนเดิม", tag: "us" },
@@ -29,7 +32,11 @@ const highlightVideos = [
 ];
 
 const anniversaryStart = new Date("2024-04-21T00:00:00");
-
+if (themePulse) {
+  themePulse.addEventListener("click", () => {
+    // effect
+  });
+}
 // ================= ELEMENTS =================
 const bgTrack = document.getElementById("bgTrack");
 const memoryStack = document.getElementById("memoryStack");
@@ -96,9 +103,9 @@ function createVideoCards() {
     const card = document.createElement("article");
     card.className = "glass-card video-card reveal";
     card.innerHTML = `
-      <video controls>
-        <source src="${src}">
-      </video>
+      <video controls playsinline webkit-playsinline>
+  <source src="${src}" type="video/mp4">
+</video>
       <div class="video-caption">
         <strong>${title}</strong>
         <p>${text}</p>
@@ -251,7 +258,21 @@ function shake() {
     { duration: 300 }
   );
 }
+document.querySelectorAll(".flip-card").forEach(card => {
+  card.addEventListener("click", () => {
+    card.classList.toggle("is-flipped");
+  });
+});
+letterChips.forEach((chip, index) => {
+  chip.addEventListener("click", () => {
+    letterChips.forEach(c => c.classList.remove("is-active"));
+    letterParagraphs.forEach(p => p.classList.remove("is-visible"));
 
+    chip.classList.add("is-active");
+    letterParagraphs[index].classList.add("is-visible");
+  });
+});
+closeLightbox.onclick = () => lightbox.close();
 // ================= INIT =================
 createBackgroundSlides();
 createMemoryCards();
