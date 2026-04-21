@@ -3,9 +3,10 @@
 document.querySelectorAll(".bg-overlay, .bg-glow, .background-carousel")
   .forEach(el => el.style.pointerEvents = "none");
 
+// อัปเดตรายชื่อไฟล์พื้นหลังเป็น JPG/JPEG ที่มีอยู่ในโฟลเดอร์
 const backgroundImages = [
-  "assets/temp_image_60A0D3C9-5A78-4592-8C3D-53E05E4D6619.WEBP",
-  "assets/temp_image_3D048E8E-E3A1-4F56-B816-8BCD2BEAD754.WEBP",
+  "assets/IMG_1767839910475.JPG",
+  "assets/IMG_1767839906803.JPG",
   "assets/SAM_6110.jpg",
   "assets/SAM_6280.JPEG",
   "assets/SAM_6282.JPEG",
@@ -16,6 +17,7 @@ const backgroundImages = [
   "assets/IMG_4636.JPG"
 ];
 
+// อัปเดตรายชื่อไฟล์ความทรงจำดึงจากไฟล์ JPG ที่มีอยู่จริง
 const memoryImages = [
   { src: "assets/IMG_3494.JPG", title: "รูปที่แค่เห็นก็ยิ้มแล้ว", text: "บางภาพพอกลับมาดู ก็ยังรู้สึกเหมือนวันนั้นอยู่ใกล้ ๆ", tag: "favorite" },
   { src: "assets/IMG_4636.JPG", title: "โมเมนต์เล็ก ๆ ของเรา", text: "ไม่ได้ต้องมีอะไรยิ่งใหญ่ แค่มีเธออยู่ด้วยก็พิเศษแล้ว", tag: "little things" },
@@ -36,12 +38,13 @@ const highlightVideos = [
 ];
 
 const anniversaryStart = new Date("2024-04-21T00:00:00");
-let themePulse = null; // Defined to avoid errors if missing from DOM
+let themePulse = null; 
 if (themePulse) {
   themePulse.addEventListener("click", () => {
     // effect
   });
 }
+
 // ================= ELEMENTS =================
 const bgTrack = document.getElementById("bgTrack");
 const memoryStack = document.getElementById("memoryStack");
@@ -242,7 +245,6 @@ document.querySelectorAll(".keypad button").forEach(btn => {
       }
     }
 
-    // แก้ไขจาก 4 จุด เป็น 6 จุด เพื่อให้พอดีกับรหัสผ่าน 6 ตัว
     pinDisplay.textContent = "•".repeat(currentPin.length).padEnd(6, "•");
   };
 });
